@@ -2,6 +2,7 @@ package com.mycoolclient.hud.modules;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mycoolclient.hud.HudModule;
+import net.minecraft.client.font.TextRenderer;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.DrawableHelper;
 import net.minecraft.client.util.math.MatrixStack;
@@ -53,7 +54,7 @@ public class KeystrokesHud extends HudModule {
         int bg = pressed ? 0xFF00D9FF : 0xB0101014;
         int textColor = pressed ? 0xFF101014 : 0xFFFFFFFF;
         DrawableHelper.fill(matrices, (int) x, (int) y, (int) (x + size), (int) (y + size), bg);
-        var font = MinecraftClient.getInstance().textRenderer;
+        TextRenderer font = MinecraftClient.getInstance().textRenderer;
         int tw = font.getWidth(label);
         font.draw(matrices, label, x + (size - tw) / 2f, y + (size - font.fontHeight) / 2f, textColor);
     }
@@ -62,7 +63,7 @@ public class KeystrokesHud extends HudModule {
         int bg = pressed ? 0xFF00D9FF : 0xB0101014;
         int textColor = pressed ? 0xFF101014 : 0xFFFFFFFF;
         DrawableHelper.fill(matrices, (int) x, (int) y, (int) (x + w), (int) (y + h), bg);
-        var font = MinecraftClient.getInstance().textRenderer;
+        TextRenderer font = MinecraftClient.getInstance().textRenderer;
         int tw = font.getWidth(label);
         font.draw(matrices, label, x + (w - tw) / 2f, y + (h - font.fontHeight) / 2f, textColor);
     }
