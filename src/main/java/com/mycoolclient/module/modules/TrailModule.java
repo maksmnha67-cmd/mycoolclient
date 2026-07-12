@@ -2,7 +2,7 @@ package com.mycoolclient.module.modules;
 
 import com.mycoolclient.module.Module;
 import net.minecraft.client.MinecraftClient;
-import net.minecraft.client.particle.DustParticleEffect;
+import net.minecraft.particle.DustParticleEffect;
 import net.minecraft.client.world.ClientWorld;
 import net.minecraft.util.math.Vec3f;
 
