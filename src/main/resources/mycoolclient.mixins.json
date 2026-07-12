@@ -1,0 +1,14 @@
+{
+  "required": true,
+  "package": "com.mycoolclient.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "client": [
+    "MixinInGameHud",
+    "MixinHeldItemRenderer",
+    "MixinPlayerEntityRenderer",
+    "MixinWorldRenderer"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
