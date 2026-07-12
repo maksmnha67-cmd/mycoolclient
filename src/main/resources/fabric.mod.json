@@ -3,7 +3,7 @@
   "id": "mycoolclient",
   "version": "${version}",
   "name": "MyCoolClient",
-  "description": "Кастомный HUD и ClickGUI для Minecraft 1.16.5. Только визуал и удобства — без читерских функций.",
+  "description": "Кастомный HUD и ClickGUI для Minecraft 1.18.2. Только визуал и удобства — без читерских функций.",
   "authors": ["You"],
   "contact": {},
   "license": "MIT",
@@ -20,7 +20,7 @@
   "depends": {
     "fabricloader": ">=0.14.0",
     "fabric": "*",
-    "minecraft": "1.16.5",
-    "java": ">=8"
+    "minecraft": "1.18.2",
+    "java": ">=17"
   }
 }
