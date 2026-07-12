@@ -5,6 +5,7 @@ import com.mycoolclient.module.ModuleManager;
 import com.mycoolclient.module.modules.AngelHaloModule;
 import com.mycoolclient.module.modules.ChinaHatModule;
 import com.mycoolclient.module.modules.WingsModule;
+import net.minecraft.client.network.AbstractClientPlayerEntity;
 import net.minecraft.client.render.VertexConsumerProvider;
 import net.minecraft.client.render.entity.PlayerEntityRenderer;
 import net.minecraft.client.util.math.MatrixStack;
@@ -29,7 +30,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public class MixinPlayerEntityRenderer {
 
     @Inject(method = "render", at = @At("TAIL"))
-    private void mycoolclient$renderChinaHat(PlayerEntity player, float yaw, float tickDelta,
+    private void mycoolclient$renderChinaHat(AbstractClientPlayerEntity player, float yaw, float tickDelta,
                                               MatrixStack matrices, VertexConsumerProvider vertexConsumers,
                                               int light, CallbackInfo ci) {
         ChinaHatModule hat = (ChinaHatModule) ModuleManager.getByName("ChinaHat");
@@ -154,4 +155,5 @@ public class MixinPlayerEntityRenderer {
         RenderSystem.disableBlend();
         matrices.pop();
     }
+}
 }
