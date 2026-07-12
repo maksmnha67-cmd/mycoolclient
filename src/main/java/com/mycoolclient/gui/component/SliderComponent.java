@@ -1,6 +1,7 @@
 package com.mycoolclient.gui.component;
 
 import com.mojang.blaze3d.systems.RenderSystem;
+import net.minecraft.client.font.TextRenderer;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.DrawableHelper;
 import net.minecraft.client.util.math.MatrixStack;
@@ -39,7 +40,7 @@ public class SliderComponent extends DrawableHelper {
         int fillWidth = (int) (width * percent);
         fill(matrices, x, y, x + fillWidth, y + height, 0xFF00D9FF);
 
-        var font = MinecraftClient.getInstance().textRenderer;
+        TextRenderer font = MinecraftClient.getInstance().textRenderer;
         String text = label + ": " + String.format("%.1f", value);
         font.draw(matrices, text, x + 4, y + 5, 0xFFFFFFFF);
         RenderSystem.disableBlend();
