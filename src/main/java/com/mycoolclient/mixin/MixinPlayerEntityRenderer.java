@@ -156,4 +156,3 @@ public class MixinPlayerEntityRenderer {
         matrices.pop();
     }
 }
-}
