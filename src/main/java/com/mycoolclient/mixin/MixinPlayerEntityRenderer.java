@@ -7,7 +7,6 @@ import com.mycoolclient.module.modules.ChinaHatModule;
 import com.mycoolclient.module.modules.WingsModule;
 import net.minecraft.client.render.VertexConsumerProvider;
 import net.minecraft.client.render.entity.PlayerEntityRenderer;
-import net.minecraft.client.render.entity.model.EntityModelLayers;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.client.render.Tessellator;
 import net.minecraft.client.render.BufferBuilder;
