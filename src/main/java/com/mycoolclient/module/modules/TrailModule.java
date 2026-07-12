@@ -4,7 +4,6 @@ import com.mycoolclient.module.Module;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.particle.DustParticleEffect;
 import net.minecraft.client.world.ClientWorld;
-import net.minecraft.util.math.Vec3f;
 
 /**
  * Цветной след частиц под ногами игрока во время движения.
@@ -49,7 +48,7 @@ public class TrailModule extends Module {
         float g = ((color >> 8) & 0xFF) / 255f;
         float b = (color & 0xFF) / 255f;
 
-        DustParticleEffect particle = new DustParticleEffect(new Vec3f(r, g, b), 1.0f);
+        DustParticleEffect particle = new DustParticleEffect(r, g, b, 1.0f);
 
         ClientWorld world = mc.world;
         for (int i = 0; i < density; i++) {
