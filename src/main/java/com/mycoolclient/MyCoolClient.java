@@ -35,7 +35,7 @@ public class MyCoolClient implements ClientModInitializer {
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
             while (openGuiKey.wasPressed()) {
                 if (client.currentScreen == null) {
-                    client.setScreen(new ClickGuiScreen());
+                    client.openScreen(new ClickGuiScreen());
                 }
             }
 
