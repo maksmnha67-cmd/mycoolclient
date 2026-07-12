@@ -5,6 +5,7 @@ import com.mycoolclient.module.modules.HandVisualsModule;
 import net.minecraft.client.render.item.HeldItemRenderer;
 import net.minecraft.client.util.math.MatrixStack;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
@@ -27,6 +28,7 @@ public class MixinHeldItemRenderer {
      * Утилита, вызываемая из renderFirstPersonItem (внедряется через дополнительный
      * ASM-хук в реальной сборке) — здесь показан принцип применения трансформации.
      */
+    @Unique
     public static void applyTransform(MatrixStack matrices) {
         HandVisualsModule module = (HandVisualsModule)
                 com.mycoolclient.module.ModuleManager.getByName("HandVisuals");
