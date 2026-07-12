@@ -2,6 +2,7 @@ package com.mycoolclient.gui.component;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mycoolclient.module.Module;
+import net.minecraft.client.font.TextRenderer;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.DrawableHelper;
 import net.minecraft.client.util.math.MatrixStack;
@@ -31,7 +32,7 @@ public class ModuleToggleComponent extends DrawableHelper {
 
         fill(matrices, x, y, x + width, y + height, hovered ? 0x50FFFFFF : 0x30101014);
 
-        var font = MinecraftClient.getInstance().textRenderer;
+        TextRenderer font = MinecraftClient.getInstance().textRenderer;
         font.draw(matrices, module.getName(), x + 8, y + (height - font.fontHeight) / 2f, 0xFFFFFFFF);
 
         // тумблер справа
