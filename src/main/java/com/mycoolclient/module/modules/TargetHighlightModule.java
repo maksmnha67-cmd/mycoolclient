@@ -7,7 +7,6 @@ import net.minecraft.client.world.ClientWorld;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.util.hit.EntityHitResult;
 import net.minecraft.util.hit.HitResult;
-import net.minecraft.util.math.Vec3f;
 
 /**
  * Партикл-подсветка игрока, на которого наведён прицел ВПЛОТНУЮ.
@@ -83,7 +82,7 @@ public class TargetHighlightModule extends Module {
         float r = ((argb >> 16) & 0xFF) / 255f;
         float g = ((argb >> 8) & 0xFF) / 255f;
         float b = (argb & 0xFF) / 255f;
-        return new DustParticleEffect(new Vec3f(r, g, b), scale);
+        return new DustParticleEffect(r, g, b, scale);
     }
 
     /** Классический "призрак" — случайные точки по всему объёму хитбокса. */
