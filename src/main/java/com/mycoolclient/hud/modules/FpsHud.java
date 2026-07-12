@@ -1,10 +1,15 @@
 package com.mycoolclient.hud.modules;
 
 import com.mycoolclient.hud.HudModule;
-import net.minecraft.client.MinecraftClient;
 
 /** Показывает текущий FPS. */
 public class FpsHud extends HudModule {
+
+    // В 1.16.5 счётчик FPS внутри MinecraftClient приватный,
+    // поэтому считаем кадры сами: getText() дергается раз за рендер-кадр.
+    private int frameCount = 0;
+    private int fps = 0;
+    private long lastSampleTime = System.currentTimeMillis();
 
     public FpsHud() {
         super("FPS", "Показывает количество кадров в секунду", 10, 34);
@@ -13,7 +18,13 @@ public class FpsHud extends HudModule {
 
     @Override
     public String getText() {
-        int fps = MinecraftClient.getInstance().getCurrentFps();
+        frameCount++;
+        long now = System.currentTimeMillis();
+        if (now - lastSampleTime >= 1000) {
+            fps = frameCount;
+            frameCount = 0;
+            lastSampleTime = now;
+        }
         return "FPS: " + fps;
     }
 }
